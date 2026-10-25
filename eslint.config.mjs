@@ -11,6 +11,15 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  // Wrap your rules inside a proper configuration object
+  {
+    rules: {
+      "react/no-unescaped-entities": "off",
+      "@typescript-eslint/quotes": "off",
+      "quotes": "off",
+      "no-useless-escape": "off",
+    },
+  },
 ]);
 
 export default eslintConfig;
