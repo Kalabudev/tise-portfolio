@@ -9,25 +9,25 @@ const services = [
         num: '01',
         title: 'Web Development',
         description: 'Building high-performance, scalable, and responsive full-stack web applications using modern frameworks like Next.js and React.',
-        href: ""
+        href: "/contact"
     },
     {
         num: '02',
         title: 'UI/UX Design',
         description: 'Crafting intuitive, accessible, and visually stunning user interfaces with meticulous attention to detail and user experience.',
-        href: ""
+        href: "/contact"
     },
     {
         num: '03',
         title: 'Mobile App Dev',
         description: 'Developing cross-platform mobile applications for iOS and Android with smooth native performance using React Native and Expo.',
-        href: ""
+        href: "/contact"
     },
     {
         num: '04',
         title: 'Backend & APIs',
         description: 'Architecting robust backend microservices, secure database schemas, efficient caching layers, and seamless payment integrations.',
-        href: ""
+        href: "/contact"
     },
 ];
 

@@ -4,7 +4,7 @@ import Photo from "@/components/Photo";
 import { Button } from "@/components/ui/button";
 import { FiDownload, FiArrowRight } from "react-icons/fi";
 import Stats from "@/components/Stats";
-import { FaReact, FaNodeJs, FaFigma } from "react-icons/fa";
+import { FaReact, FaNodeJs } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss, SiTypescript, SiMongodb } from "react-icons/si";
 
 const techStack = [

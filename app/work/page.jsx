@@ -22,35 +22,97 @@ const projects = [
   {
     num: "01",
     category: "full-stack",
-    title: "E-Commerce Marketplace",
+    title: "Shopstero Marketplace",
     description:
-      "A high-performance multi-vendor e-commerce platform featuring secure payment processing, automated split escrow, and a comprehensive admin management dashboard.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind CSS" }, { name: "Node.js" }, { name: "MongoDB" }],
-    image: "/assets/work/thumb1.png",
-    live: "https://shopstero.com",
-    github: "https://github.com",
+      "A multi-vendor e-commerce platform architected with microservices, event-driven messaging, Redis caching and rate limiting, and split/escrow payment workflows. Currently in active development ahead of launch.",
+    stack: [
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "Node.js" },
+      { name: "MongoDB" },
+      { name: "Redis" },
+      { name: "Kafka" },
+    ],
+    image: "/assets/shopsteroimg.jpeg",
+    live: "",
+    github: "",
   },
   {
     num: "02",
     category: "full-stack",
-    title: "SaaS Analytics Dashboard",
+    title: "Grocery Delivery Platform",
     description:
-      "A feature-rich analytics platform providing real-time data visualization, user activity tracking, role-based access control, and dynamic metric reporting.",
-    stack: [{ name: "React" }, { name: "TypeScript" }, { name: "Tailwind CSS" }, { name: "Express" }],
-    image: "/assets/work/thumb2.png",
+      "A full-stack grocery delivery web application built with TypeScript for browsing inventory, managing carts, and placing orders with a responsive storefront.",
+    stack: [
+      { name: "TypeScript" },
+      { name: "React" },
+      { name: "Node.js" },
+      { name: "Tailwind CSS" },
+    ],
+    image: "/assets/grocery-delivery-image.png",
     live: "",
     github: "",
   },
   {
     num: "03",
-    category: "frontend",
-    title: "Modern Portfolio & Blog",
+    category: "mobile",
+    title: "Expo E-Commerce Mobile App",
     description:
-      "An immersive, dark-themed personal portfolio and developer blog built with fluid animations, optimized asset loading, and responsive layouts.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind CSS" }, { name: "Framer Motion" }],
-    image: "/assets/work/thumb3.png",
+      "A cross-platform mobile shopping experience built with React Native, Expo, and TypeScript featuring product browsing, cart state, and mobile-first UI.",
+    stack: [
+      { name: "React Native" },
+      { name: "Expo" },
+      { name: "TypeScript" },
+    ],
+    image: "/assets/expo-mobile.png",
     live: "",
     github: "",
+  },
+  {
+    num: "04",
+    category: "backend & apis",
+    title: "Wallet & Payments API",
+    description:
+      "A backend API service built with Node.js and Express to handle wallet balances, transaction flows, and structured REST endpoints.",
+    stack: [
+      { name: "Node.js" },
+      { name: "Express" },
+      { name: "JavaScript" },
+    ],
+    image: "/assets/wallet.png",
+    live: "",
+    github: "",
+  },
+  {
+    num: "05",
+    category: "ai & media",
+    title: "Thumblify & Background Removal",
+    description:
+      "Full-stack media and AI-assisted web applications for generating thumbnails and removing image backgrounds with modern web tooling.",
+    stack: [
+      { name: "TypeScript" },
+      { name: "JavaScript" },
+      { name: "React" },
+    ],
+    image: "/assets/thumby.png",
+    live: "",
+    github: "",
+  },
+  {
+    num: "06",
+    category: "full-stack",
+    title: "Tise Notes App",
+    description:
+      "A full-stack MERN note-taking application featuring Upstash Redis rate limiting, CRUD operations, and a modern dark interface.",
+    stack: [
+      { name: "React" },
+      { name: "Node.js" },
+      { name: "Express" },
+      { name: "Upstash Redis" },
+    ],
+    image: "/assets/notesapp.png",
+    live: "",
+    github: "https://github.com/Kalabudev/tise-notes-app",
   },
 ];
 
@@ -84,19 +146,19 @@ const Work = () => {
               className="xl:h-[520px] relative"
               onSlideChange={handleSlideChange}
             >
-              {projects.map((project, index) => {
+              {projects.map((item, index) => {
                 return (
                   <SwiperSlide key={index} className="w-full">
-                    <div className="h-[280px] sm:h-[360px] xl:h-[460px] relative group flex justify-center items-center bg-[#232329] rounded-xl overflow-hidden border border-white/5">
+                    <div className="h-[280px] sm:h-[360px] xl:h-[460px] relative group flex justify-center items-center bg-[#1c1c21] rounded-xl overflow-hidden border border-white/10 shadow-lg">
                       {/* overlay */}
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent z-10 pointer-events-none"></div>
                       {/* image */}
                       <div className="relative w-full h-full">
                         <Image
-                          src={project.image}
+                          src={item.image}
                           fill
-                          className="object-cover"
-                          alt={project.title}
+                          className="object-cover object-left"
+                          alt={item.title}
                         />
                       </div>
                     </div>
@@ -154,32 +216,36 @@ const Work = () => {
               {/* action buttons */}
               <div className="flex items-center gap-4">
                 {/* Live project button */}
-                <Link href={project.live || "#"} target="_blank" rel="noopener noreferrer">
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[56px] h-[56px] sm:w-[64px] sm:h-[64px] rounded-full bg-white/5 border border-white/10 flex justify-center items-center group hover:border-accent transition-all duration-300">
-                        <BsArrowUpRight className="text-white text-2xl group-hover:text-accent transition-all duration-300" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {project.live && (
+                  <Link href={project.live} target="_blank" rel="noopener noreferrer">
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[56px] h-[56px] sm:w-[64px] sm:h-[64px] rounded-full bg-white/5 border border-white/10 flex justify-center items-center group hover:border-accent transition-all duration-300">
+                          <BsArrowUpRight className="text-white text-2xl group-hover:text-accent transition-all duration-300" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Live project</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
 
                 {/* github project button */}
-                <Link href={project.github || "#"} target="_blank" rel="noopener noreferrer">
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[56px] h-[56px] sm:w-[64px] sm:h-[64px] rounded-full bg-white/5 border border-white/10 flex justify-center items-center group hover:border-accent transition-all duration-300">
-                        <BsGithub className="text-white text-2xl group-hover:text-accent transition-all duration-300" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {project.github && (
+                  <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[56px] h-[56px] sm:w-[64px] sm:h-[64px] rounded-full bg-white/5 border border-white/10 flex justify-center items-center group hover:border-accent transition-all duration-300">
+                          <BsGithub className="text-white text-2xl group-hover:text-accent transition-all duration-300" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Github repository</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
               </div>
 
             </div>

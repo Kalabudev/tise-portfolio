@@ -7,15 +7,18 @@ import {
   FaReact,
   FaFigma,
   FaNodeJs,
+  FaServer,
+  FaDatabase,
 } from "react-icons/fa";
 
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { TbBrandTypescript, TbBrandReactNative } from "react-icons/tb";
 
 // about data
 const about = {
   title: "About me",
   description:
-    "I am a passionate full-stack developer dedicated to building responsive, high-performance web applications with clean architecture and modern user interfaces.",
+    "Full-stack software engineer and computer science graduate focused on building scalable web applications, cross-platform mobile apps, and reliable backend systems.",
   info: [
     {
       fieldName: "Name",
@@ -23,15 +26,16 @@ const about = {
     },
     {
       fieldName: "Phone",
-      fieldValue: "+234 810 568 2653",
+      fieldValue: "+234 814 860 2296",
     },
     {
-      fieldName: "Experience",
-      fieldValue: "12+ Years",
+      fieldName: "Location",
+      fieldValue: "Lagos, Nigeria",
     },
     {
       fieldName: "LinkedIn",
-      fieldValue: "tiseolubiyi",
+      fieldValue: "https://www.linkedin.com/in/oluwatise-olubiyi-2a4841218",
+      href: "https://www.linkedin.com/in/oluwatise-olubiyi-2a4841218",
     },
     {
       fieldName: "Nationality",
@@ -39,7 +43,7 @@ const about = {
     },
     {
       fieldName: "Email",
-      fieldValue: "olubiyioluwatise@gmail.com",
+      fieldValue: "oluwatiseolubiyi@gmail.com",
     },
     {
       fieldName: "Freelance",
@@ -47,7 +51,7 @@ const about = {
     },
     {
       fieldName: "Languages",
-      fieldValue: "English, French",
+      fieldValue: "English",
     },
   ],
 };
@@ -57,37 +61,22 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
   description:
-    "A track record of engineering scalable full-stack applications, designing intuitve UIs, and collaborating across software development teams.",
+    "Hands-on experience architecting multi-vendor platforms, full-stack web apps, mobile applications, and distributed backend services.",
   items: [
     {
-      company: "Tech Solutions Inc.",
-      position: "Full Stack Developer",
-      duration: "2022 - Present",
+      company: "Shopstero",
+      position: "Founder & Full-Stack Engineer",
+      duration: "Sep 2025 - Present",
     },
     {
-      company: "Web Design Studio",
-      position: "Front-End Developer Intern",
-      duration: "Summer 2021",
+      company: "Upwork",
+      position: "Full-Stack Software Engineer",
+      duration: "May 2026 - Present",
     },
     {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
-      duration: "2020 - 2021",
-    },
-    {
-      company: "Tech Academy",
-      position: "Teaching Assistant",
-      duration: "2019 - 2020",
-    },
-    {
-      company: "Digital Agency",
-      position: "UI/UX Designer",
-      duration: "2018 - 2019",
-    },
-    {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2017 - 2018",
+      company: "New Horizons Nigeria",
+      position: "SIWES Industrial Trainee",
+      duration: "2025 (22 Weeks)",
     },
   ],
 };
@@ -97,37 +86,17 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "My education",
   description:
-    "Formal academic training combined with practical bootcamps and certifications in computer science and modern web technologies.",
+    "Undergraduate computer science education paired with practical systems engineering, networking, and full-stack software development.",
   items: [
     {
-      institution: "Online Course Platform",
-      degree: "Full Stack Web Development Bootcamp",
-      duration: "2023",
+      institution: "Babcock University",
+      degree: "B.Sc. (Hons) Computer Science",
+      duration: "Graduated Jul 2026",
     },
     {
-      institution: "Codecademy",
-      degree: "Front-end Track",
-      duration: "2022",
-    },
-    {
-      institution: "Online Course",
-      degree: "Programming Course",
-      duration: "2020 - 2021",
-    },
-    {
-      institution: "Tech Institute",
-      degree: "Certified Web Developer",
-      duration: "2019",
-    },
-    {
-      institution: "Design School",
-      degree: " Diploma in Graphic Design",
-      duration: "2016 - 2018",
-    },
-    {
-      institution: "Community College",
-      degree: "Associate Degree in Computer Science",
-      duration: "2014 - 2016",
+      institution: "New Horizons Nigeria",
+      degree: "SIWES — Network+ & Security+ Track",
+      duration: "2025",
     },
   ],
 };
@@ -136,39 +105,55 @@ const education = {
 const skills = {
   title: "My skills",
   description:
-    "Core frontend and backend technologies I utilize to build modern, responsive, and performance-optimized digital products.",
+    "Frontend, mobile, backend, and distributed systems technologies I use to build scalable, production-ready applications.",
   skillList: [
     {
       icon: <FaHtml5 />,
-      name: "html 5",
+      name: "HTML 5",
     },
     {
       icon: <FaCss3 />,
-      name: "css 3",
+      name: "CSS 3",
     },
     {
       icon: <FaJs />,
-      name: "javascript",
+      name: "JavaScript",
+    },
+    {
+      icon: <TbBrandTypescript />,
+      name: "TypeScript",
     },
     {
       icon: <FaReact />,
-      name: "react.js",
+      name: "React.js",
     },
     {
       icon: <SiNextdotjs />,
-      name: "next.js",
+      name: "Next.js",
+    },
+    {
+      icon: <TbBrandReactNative />,
+      name: "React Native / Expo",
     },
     {
       icon: <SiTailwindcss />,
-      name: "tailwind css",
+      name: "Tailwind CSS",
     },
     {
       icon: <FaNodeJs />,
-      name: "node.js",
+      name: "Node.js & Express",
+    },
+    {
+      icon: <FaServer />,
+      name: "Microservices",
+    },
+    {
+      icon: <FaDatabase />,
+      name: "PostgreSQL & MongoDB",
     },
     {
       icon: <FaFigma />,
-      name: "figma",
+      name: "Figma",
     },
   ],
 };
@@ -284,13 +269,16 @@ const Resume = () => {
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className="w-full h-[120px] xl:h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                              <div className="text-5xl xl:text-6xl group-hover:text-accent transition-all duration-300">
+                            <TooltipTrigger className="w-full h-[130px] xl:h-[155px] bg-[#232329] rounded-xl flex flex-col justify-center items-center gap-3 px-3 group">
+                              <div className="text-4xl xl:text-5xl group-hover:text-accent transition-all duration-300">
                                 {skill.icon}
                               </div>
+                              <span className="text-sm font-medium text-white/80 group-hover:text-white transition-colors duration-300 text-center">
+                                {skill.name}
+                              </span>
                             </TooltipTrigger>
                             <TooltipContent>
-                              <p className="capitalize">{skill.name}</p>
+                              <p>{skill.name}</p>
                             </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>
@@ -308,15 +296,28 @@ const Resume = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {about.description}
                 </p>
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-4 xl:gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-4 xl:gap-y-6 max-w-[780px] mx-auto xl:mx-0">
                   {about.info.map((item, index) => {
                     return (
                       <li
                         key={index}
-                        className="flex items-center justify-center xl:justify-start gap-4"
+                        className="flex flex-wrap items-center justify-center xl:justify-start gap-2 sm:gap-4"
                       >
                         <span className="text-white/60">{item.fieldName}</span>
-                        <span className="text-lg xl:text-xl">{item.fieldValue}</span>
+                        {item.href ? (
+                          <a
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm sm:text-base xl:text-lg text-accent hover:underline break-all"
+                          >
+                            {item.fieldValue}
+                          </a>
+                        ) : (
+                          <span className="text-base sm:text-lg xl:text-xl">
+                            {item.fieldValue}
+                          </span>
+                        )}
                       </li>
                     );
                   })}
